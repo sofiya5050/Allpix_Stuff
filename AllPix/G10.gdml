@@ -51,6 +51,7 @@
   <volume name="WorldBox">
     <materialref ref="G10"/>
     <solidref ref="WorldBox"/>
+    <auxiliary auxtype="Color" auxvalue="#CDCDCDAA"/>
   </volume>
 
 </structure>
