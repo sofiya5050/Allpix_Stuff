@@ -43,14 +43,14 @@
 </materials>
 
 <solids>
-  <box  name="WorldBox" x="4.0" y="4.0" z="6.0" lunit="cm"/>
+  <box  name="WorldBoxSol" x="4.0" y="4.0" z="6.0" lunit="cm"/>
 </solids>
 
 <structure>
 
   <volume name="WorldBox">
     <materialref ref="G10"/>
-    <solidref ref="WorldBox"/>
+    <solidref ref="WorldBoxSol"/>
     <auxiliary auxtype="Color" auxvalue="#CDCDCDAA"/>
   </volume>
 
