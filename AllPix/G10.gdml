@@ -1,0 +1,62 @@
+# Author: Sofiya
+# Reference: https://allpix-squared.docs.cern.ch/reference/files/materialmanager_8cpp/ 
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:gdml="http://cern.ch/2001/Schemas/GDML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd" >
+
+<materials>
+
+  <element name="Oxygen" formula="O" Z="8.">
+    <atom value="16.0"/>
+  </element>
+  <element name="Carbon" formula="C" Z="6.">
+    <atom value="12.0"/>
+  </element>
+  <element name="Hydrogen" formula="H" Z="1.">
+    <atom value="1.0"/>
+  </element>
+  <element name="Chlorine" formula="Cl" Z="17.">
+    <atom value="35.5"/>
+  </element>
+  <element name="Silicon" formula="Si" Z="14.">
+    <atom value="28.1"/>
+  </element>
+
+  <material name="Epoxy">
+   <D value="1.3" unit="g/cm3"/>
+   <fraction n="0.13" ref="Hydrogen"/>
+   <fraction n="0.33" ref="Oxygen"/>
+   <fraction n="0.54" ref="Carbon"/>
+  </material>
+  <material name="SiliconDioxide">
+   <D value="2.7" unit="g/cm3"/>
+   <fraction n="0.47" ref="Silicon"/>
+   <fraction n="0.53" ref="Oxygen"/>
+  </material>
+  <material name="G10">
+   <D value="1.7" unit="g/cm3"/>
+   <fraction n="0.773" ref="SiliconDioxide"/>
+   <fraction n="0.147" ref="Epoxy"/>
+   <fraction n="0.08" ref="Chlorine"/>
+  </material>
+
+</materials>
+
+<solids>
+  <box  name="WorldBox" x="4.0" y="4.0" z="6.0" lunit="cm"/>
+</solids>
+
+<structure>
+
+  <volume name="WorldBox">
+    <materialref ref="G10"/>
+    <solidref ref="WorldBox"/>
+  </volume>
+
+</structure>
+
+<setup name="Default" version="1.0">
+  <world ref="WorldBox"/>
+</setup>
+
+</gdml>
